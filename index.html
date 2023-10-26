@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif; margin: 0 auto; max-width: 320px; padding: 5px;}
+
+h1,h2,h3,h4,h5,h6{margin: 7px 0 7px 0;padding: 0;font-size: 19px;}
+
+.mySlides,.mySlides1 {display: none; text-align: center;}
+.mySlides img,.mySlides1 img  {vertical-align: middle;height: 540px;border-radius: 15px;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1080px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot,.dot1 {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  from {opacity: .7} 
+  to {opacity: 3}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+
+<script>
+        $(document).on('click','.send', function(){
+    /* Form Input */
+    var input_name          = $("#name").val(),
+        input_email         = $("#email").val(),
+        input_phone         = $("#phone").val(),
+        input_collor       = $("#collor").val(),
+        input_alamat   = $("#alamat").val();
+ 
+    /* Whatsapp Setting */
+    var walink      = 'https://web.whatsapp.com/send',
+        phone       = '6285171602756',
+        text        = 'Halo Admin Rizqy.? Saya Mau Order Mini Blender.',
+        text2       = 'Terimakasih, Tolong Segera Dikirim Paketnya YA..!',
+        text_yes    = 'Orderan Sudah Terkirim.',
+        text_no     = 'ISI Form Untuk Melakukan Order.!';
+ 
+    /* Smartphone Support */
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var walink = 'whatsapp://send';
+    }
+ 
+    if(input_name != "" && input_phone != "" && input_collor != ""){
+        /* Whatsapp URL */
+        var checkout_whatsapp = walink + '?phone=' + phone + '&text=' + text + '%0A%0A' +
+            '*Nama* : ' + input_name + '%0A' +
+            '*Email* : ' + input_email + '%0A' +
+            '*No. Whatsapp* : ' + input_phone + '%0A' +
+            '*Warna Blender* : ' + input_collor + '%0A' +
+            '*Alamat Lengkap* : ' + input_alamat + '%0A%0A' + text2 + '%0A';
+ 
+        /* Whatsapp Window Open */
+        window.open(checkout_whatsapp,'_blank');
+        document.getElementById("text-info").innerHTML = '<div class="alert alert-success">'+text_yes+'</div>';
+    } else {
+        document.getElementById("text-info").innerHTML = '<div class="alert alert-danger">'+text_no+'</div>';
+    } });
+    </script>
+</head>
+<body>
+<main style="justify-content: center;align-items: center; display: grid; grid-template-columns: auto;">
+<h2 style="text-align:center"><b>Beli Jus..? Kenapa Gak Coba Bikin Sendiri !!!</b></h2>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="https://brdsg.com/img/1000/brnui0uvbrqp29uyf3_1/hUCUakFjcK85FbhUL3u5Qb5PCIYvSQZidHqdhmhQkAw.webp">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://brdsg.com/img/1000/brnui0uvbrqp29uyf3_1/hUCrwVK7gw5QskFhUL33pI1nexbGPIS5SxnB0fouXy7w.webp">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hULDkGEKNsQ7LhohULvqWCAjZRHjqrRYaqcbDRRH8RdA.webp">
+</div>
+
+<div class="mySlides fade">
+    <img src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hUCGLknSKJKhsBdhULDWum8dZNNZTjT42rgGSTBuehJQ.webp">
+</div>
+
+<div class="mySlides fade">
+    <img src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hULBNTagW0iJ0qThULvZwvQIL7D7fSXOhiXolErxdTw.webp">
+</div>
+  
+<div class="mySlides fade">
+    <img src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hUCUZxs0L1fdHsbChUL3DaGkeaAIkxITwGWsyb3ii1ZQ.webp">
+</div>
+  
+<div class="mySlides fade">
+    <img src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hUCbUu4y8Gn7t9hULtrP58sujxBzQzGLrjLGEz0Mpw.webp">
+</div>
+  
+</div>
+
+<div style="text-align:center;margin:9px;">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<p>
+  <b>SEBULAN TURUN 5 KG !!</b> Rajin minum jus di pagi Hari bikin pencernaan jadi sehat guys. Sekarang lebih gampang bikin Fresh Juice tiap hari hanya dengan fresh Blender botol minum Juicer Shake 😍
+</p>
+
+<div style="text-align:center">
+  <img width="270px" src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hUCbksYLOCbJEZhULtdTwCNrAAyUvTaSKxgOBLTRFQQ.webp">
+  <img width="270px" src="https://brdsg.com/img/800/brnui0uvbrqp29uyf3_1/hUCSbIbquav7hDThULt4Ii06NsYkYtQyK1jcQKzVtbDQ.webp">
+</div>
+
+<b style="text-align:center">⭐⭐⭐⭐⭐ - 4.9 | 36799k Terjual</b>
+<h2 style="text-align:center"><b><u>Fresh Drink Place</u></b></h2>
+<h3 style="text-align:center">Blender Botol Minum Juicer Shake</h3>
+<p style="text-align:center">
+Sedang Diskon Hari Ini<br>
+<div style="display: grid; grid-template-columns: auto auto; font-size: 23px;">
+    <span style="text-align: center; color: red;"><strike>Rp 390,000</strike></span>
+    <span style="text-align: center; color: green;"><b>Rp 139.000</b></span>
+</div>
+    </p>
+<div class="w-330">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Langsung Order Via WhatsApp
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Nama Anda</label>
+                        <input type="text" name="name" class="form-control" placeholder="Nama" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail Anda</label>
+                        <input type="email" name="email" class="form-control" placeholder="E-mail" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label>No. WhatsApp</label>
+                        <input type="text" name="phone" class="form-control" placeholder="No. WhatsApp" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Warna Produk</label>
+                        <select name="product" class="form-control" id="collor">
+                            <option value="">-- Pilih Warna --</option>
+                            <option value="Kuning">Warna Kuning</option>
+                            <option value="Pink">Warna Pink</option>
+                            <option value="Ungu">Warna Ungu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat Lengkap Anda</label>
+                        <textarea name="description" class="form-control" rows="3" id="alamat" placeholder="Provinsi, Kota/Kabupaten, Kecamatan, Desa, RT/RW, Nama Jalan/Rumah, KODE POS"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success send">👉 Send Via WhatsApp</button>
+                    </div>
+ 
+                    <div id="text-info"></div>
+                </div>
+            </div>
+    </div>
+
+    <div style="text-align:center;display:grid;justify-content:center">
+        <img src="https://brdsg.com/img/600/bq7l6jf6bq7r6th5vg_1/hjjZbJ70hs1kxsAahjXsrwpPU9E8uMSD6h1BuRrtlbA.webp"/>
+        <img src="https://brdsg.com/img/600/bq7l6jf6bq7r6th5vg_1/hjjgNZrcCysus8FhjXsgAIHX7gmWnVQP6rxIF11kYuQ.webp"/>
+    </div>
+</main>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html> 
