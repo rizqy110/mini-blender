@@ -59,11 +59,12 @@ img{width:100%}
 <script>
         $(document).on('click','.send', function(){
     /* Form Input */
-    var input_name          = $("#name").val(),
-        input_email         = $("#email").val(),
-        input_phone         = $("#phone").val(),
-        input_collor       = $("#collor").val(),
-        input_alamat   = $("#alamat").val();
+    var input_name = $("#name").val(),
+        input_email = $("#email").val(),
+        input_phone = $("#phone").val(),
+        input_collor = $("#collor").val(),
+        input_pembayaran = $("#pembayaran").val(),
+        input_alamat = $("#alamat").val();
  
     /* Whatsapp Setting */
     var walink      = 'https://web.whatsapp.com/send',
@@ -85,6 +86,7 @@ img{width:100%}
             '*Email* : ' + input_email + '%0A' +
             '*No. Whatsapp* : ' + input_phone + '%0A' +
             '*Warna Blender* : ' + input_collor + '%0A' +
+            '*Metode Pembayaran* : ' + input_pembayaran + '%0A' +
             '*Alamat Lengkap* : ' + input_alamat + '%0A%0A' + text2 + '%0A';
  
         /* Whatsapp Window Open */
@@ -189,6 +191,14 @@ img{width:100%}
                             <option value="Kuning">Kuning</option>
                             <option value="Pink">Pink</option>
                             <option value="Ungu">Ungu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Metode Pembayaran</label>
+                        <select name="product" class="form-control" id="collor">
+                            <option value="">-- Pilih Pembayaran --</option>
+                            <option value="Transfer">Transfer</option>
+                            <option value="COD">COD</option>
                         </select>
                     </div>
                     <div class="form-group">
